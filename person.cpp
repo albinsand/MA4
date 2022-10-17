@@ -1,5 +1,6 @@
 #include <cstdlib>
 // Person class 
+// fib är lika get
 
 class Person{
 	public:
