@@ -1,27 +1,44 @@
 #include <cstdlib>
 // Person class 
-// fib är lika get
+// fib är lik get
 
 class Person{
 	public:
 		Person(int);
 		int get();
 		void set(int);
+		int fib();
 	private:
 		int age;
+		int fibn(int);
+		
 	};
  
 Person::Person(int n){
 	age = n;
 	}
  
+ void Person::set(int n){
+	age = n;
+	}
+
 int Person::get(){
 	return age;
 	}
- 
-void Person::set(int n){
-	age = n;
+
+int Person::fib(){
+	return fibn(age);
 	}
+
+int Person::fibn(int n){
+	if (n <= 1){
+		return (n);
+	} else {
+		return (fibn(n-1) + fibn(n-2));
+	}
+}
+
+
 
 
 extern "C"{
