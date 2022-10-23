@@ -56,7 +56,7 @@ def MC_pi():
         plt.savefig(f'piaprox-{n[i]}.png')
         
    
-print(MC_pi())
+#print(MC_pi())
 
 # 1.2 Approximera volymen av en d-dimensionell hypersfär
 
