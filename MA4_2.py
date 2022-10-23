@@ -6,8 +6,11 @@ from person import Person
 def main():
 	f = Person(5)
 	print(f.get())
-	f.set(7)
+	f.set(9)
 	print(f.get())
+	print(f.fib(10))
+	print(f.fib_numb(10))
+	print(f.fib_py(10))
 
 
 '''	
