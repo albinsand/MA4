@@ -8,9 +8,13 @@ def main():
 	print(f.get())
 	f.set(9)
 	print(f.get())
+
 	print(f.fib(10))
 	print(f.fib_numb(10))
 	print(f.fib_py(10))
+
+if __name__ == '__main__':
+	main()
 
 
 '''	
@@ -58,6 +62,4 @@ for n in x:
 #plt.plot(x, y_c, label='C++')
 #plt.savefig('plot_MA42.png')
 
-#if __name__ == '__main__':
-#	main()
 
