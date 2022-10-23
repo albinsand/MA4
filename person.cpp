@@ -10,7 +10,6 @@ class Person{
 		int fib(int);
 	private:
 		int age;
-//		int fibn(int);
 		
 	};
  
@@ -26,9 +25,6 @@ int Person::get(){
 	return age;
 	}
 
-//int Person::fib(){
-//	return fibn(age);
-//	}
 
 int Person::fib(int n){
 	if (n <= 1)
@@ -51,5 +47,5 @@ extern "C"{
 			person = nullptr;
 			}
 		}
-	int fib(Person* person, int n) {return person->fib(n);}	
+	int Person_fib(Person* person, int n) {return person->fib(n);}	
 	}
