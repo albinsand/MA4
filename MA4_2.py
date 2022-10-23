@@ -1,7 +1,6 @@
 #!/usr/bin/env python3.9
 
 from person import Person
-
 from numba import njit
 
 @njit

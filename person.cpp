@@ -51,4 +51,5 @@ extern "C"{
 			person = nullptr;
 			}
 		}
+	int fib(Person* person) {return person->get();}	
 	}
