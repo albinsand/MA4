@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.9
 
-from cProfile import label
+
 from time import perf_counter as pc
 from person import Person
 from numba import njit
@@ -52,15 +52,53 @@ def main():
 		ttt = end - start
 		tid_py.append(ttt)
 
+	a = plt.figure()
+	plt.plot(nn,tid_fib,label ="C++",color='red')
+	plt.plot(nn,tid_numb,label ="numb",color='blue')
+	plt.plot(nn,tid_py,label ="python",color='green')
+	plt.legend()
+	plt.savefig(f'fib test for different methods.png')
 
-	a = plt.plot(nn,tid_fib,label ="fib - C++")
-	b = plt.plot(nn,tid_numb,label ="fib - numb")
-	c = plt.plot(nn,tid_py,label ="fib - python")
+###########################################################
 
+	nnn = range(20,31)
+	ttid_py = []
+	ttid_numb = []
 
-	plt.savefig(f'fib-C++-{a}.png')
-	plt.savefig(f'fib-numb-{b}.png')
-	plt.savefig(f'fib-python-{c}.png')
+	for n in nnn:
+		start = pc()
+		print(fib_py(n))
+		end = pc()
+		t = end - start
+		ttid_py.append(t)
+
+	
+		start = pc()
+		print(fib_numb(n))
+		end = pc()
+		tt = end - start
+		ttid_numb.append(tt)
+
+	aa = plt.figure()
+	plt.plot(nnn,ttid_numb,label ="numb - (20 till 30)")
+	plt.plot(nnn,ttid_py,label ="python - (20 till 30)")
+	plt.legend()
+	plt.savefig('fib for numba and python.png')
+	
+
+##################################################
+
+#	start = pc()
+#	fib_numb(47)
+#	end = pc()
+#	print(f"tid for berakning av fib(47) med numba: {round(end - start, 2)} sek")
+
+#	start = pc()
+#	f.fib(47)
+#	end = pc()
+#	print(f"tid for berakning av fib(47) med C++: {round(end - start, 2)} sek")
+
+################################
 
 if __name__ == '__main__':
 	main()

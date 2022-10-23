@@ -105,7 +105,7 @@ if __name__ == '__main__':
     sfar_multidim(1000000, 11)
     end = pc()
     print('Flera proccesoerer:')
-    print(f'Approximerad volym:{1}, Verklig volym:{V_d(11)}')
+    print(f'Approximerad volym:, Verklig volym:{V_d(11)}')
     print(f"tid for berakning: {round(end - start, 2)} sek")
 
     start = pc()
