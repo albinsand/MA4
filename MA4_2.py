@@ -26,6 +26,21 @@ def main():
 	f.set(9)
 	print(f.get())
 
+	start = pc()
+	fib_numb(47)
+	end = pc()
+	print(f"tid for berakning av fib(47) med numba: {round(end - start, 2)} sek")
+
+	start = pc()
+	f.fib(47)
+	end = pc()
+	print(f"tid for berakning av fib(47) med C++: {round(end - start, 2)} sek")
+
+
+if __name__ == '__main__':
+	main()
+
+'''
 	nn = range(30,46)
 	tid_py = []
 	tid_numb = []
@@ -58,9 +73,9 @@ def main():
 	plt.plot(nn,tid_py,label ="python",color='green')
 	plt.legend()
 	plt.savefig(f'fib test for different methods.png')
-
+'''
 ###########################################################
-
+'''
 	nnn = range(20,31)
 	ttid_py = []
 	ttid_numb = []
@@ -85,22 +100,9 @@ def main():
 	plt.legend()
 	plt.savefig('fib for numba and python.png')
 	
-
+'''
 ##################################################
 
-#	start = pc()
-#	fib_numb(47)
-#	end = pc()
-#	print(f"tid for berakning av fib(47) med numba: {round(end - start, 2)} sek")
 
-#	start = pc()
-#	f.fib(47)
-#	end = pc()
-#	print(f"tid for berakning av fib(47) med C++: {round(end - start, 2)} sek")
-
-################################
-
-if __name__ == '__main__':
-	main()
 
 
