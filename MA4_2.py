@@ -2,6 +2,21 @@
 
 from time import perf_counter as pc
 from person import Person
+from numba import njit
+
+
+@njit
+def fib_numb(n):
+	if n <= 1:
+		return n
+	else:
+		return(fib_numb(n-1) + fib_numb(n-2))
+
+def fib_py(n):
+	if n <= 1:
+		return n
+	else:
+		return(fib_py(n-1) + fib_py(n-2))
 
 def main():
 	f = Person(5)
@@ -10,8 +25,8 @@ def main():
 	print(f.get())
 
 	print(f.fib(10))
-	print(f.fib_numb(10))
-	print(f.fib_py(10))
+	print(fib_numb(10))
+	print(fib_py(10))
 
 if __name__ == '__main__':
 	main()
