@@ -30,12 +30,15 @@ def main():
 	fib_numb(47)
 	end = pc()
 	print(f"tid for berakning av fib(47) med numba: {round(end - start, 2)} sek")
+	print(f"Berakning av fib(47) med numba: {fib_numb(47)}")
+    # tid for berakning av fib(47) med numba: 48.11 sek
 
 	start = pc()
 	f.fib(47)
 	end = pc()
 	print(f"tid for berakning av fib(47) med C++: {round(end - start, 2)} sek")
-
+	print(f"Berakning av fib(47) med C++: {f.fib(47)}")
+	# tid for berakning av fib(47) med C++: 47.83 sek
 
 if __name__ == '__main__':
 	main()
