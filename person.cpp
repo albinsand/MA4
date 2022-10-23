@@ -1,6 +1,4 @@
 #include <cstdlib>
-// Person class 
-// fib är lik get
 
 class Person{
 	public:
@@ -33,8 +31,6 @@ int Person::fib(int n){
 		return (fib(n-1) + fib(n-2));
 	
 }
-
-
 
 
 extern "C"{
