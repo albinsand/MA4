@@ -15,12 +15,12 @@ Person::Person(int n){
 	age = n;
 	}
  
- void Person::set(int n){
-	age = n;
-	}
-
 int Person::get(){
 	return age;
+	}
+
+void Person::set(int n){
+	age = n;
 	}
 
 
