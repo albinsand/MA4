@@ -47,7 +47,7 @@ def MC_pi():
         n_sx_all.append(n_s_x)
         n_sy_all.append(n_s_y)
 
-    print(pi_aprox_all)
+    #print(pi_aprox_all)
 
     for i in range(0,3):
         plt.plot(n_cx_all[i],n_cy_all[i],'ro',n_sx_all[i],n_sy_all[i],'bo')
@@ -56,7 +56,7 @@ def MC_pi():
         plt.savefig(f'piaprox-{n[i]}.png')
         
    
-#print(MC_pi())
+print(MC_pi())
 
 # 1.2 Approximera volymen av en d-dimensionell hypersfär
 
