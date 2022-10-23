@@ -55,6 +55,6 @@ for n in x:
 #plt.plot(x, y_c, label='C++')
 #plt.savefig('plot_MA42.png')
 
-if __name__ == '__main__':
-	main()
+#if __name__ == '__main__':
+#	main()
 
