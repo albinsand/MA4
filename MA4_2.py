@@ -53,12 +53,14 @@ def main():
 		tid_py.append(ttt)
 
 
-	plt.plot(nn,tid_fib,label ="fib - C++")
-	plt.plot(nn,tid_numb,label ="fib - numb")
-	plt.plot(nn,tid_py,label ="fib - python")
+	a = plt.plot(nn,tid_fib,label ="fib - C++")
+	b = plt.plot(nn,tid_numb,label ="fib - numb")
+	c = plt.plot(nn,tid_py,label ="fib - python")
 
 
-	#plt.savefig(f'piaprox-{n[i]}.png')
+	plt.savefig(f'fib-C++-{a}.png')
+	plt.savefig(f'fib-numb-{b}.png')
+	plt.savefig(f'fib-python-{c}.png')
 
 if __name__ == '__main__':
 	main()
