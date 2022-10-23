@@ -2,27 +2,15 @@
 
 from time import perf_counter as pc
 from person import Person
-from numba import njit
-
-@njit
-def fib_numb(n):
-	if n <= 1:
-		return n
-	else:
-		return(fib_numb(n-1) + fib_numb(n-2))
-
-def fib_py(n):
-	if n <= 1:
-		return n
-	else:
-		return(fib_py(n-1) + fib_py(n-2))
 
 def main():
 	f = Person(5)
 	print(f.get())
 	f.set(7)
 	print(f.get())
-	
+
+
+'''	
 nn = 47
 print('N: ', nn)
 start = pc()
@@ -46,7 +34,7 @@ for n in x:
 	print('N: ', n)
 	start = pc()
 	fib_py(n)
-	end = pc()
+	end = pc()	
 	y_py.append(end-start)
 	print('fib_py: ', end-start)
 	start = pc()
@@ -60,6 +48,7 @@ for n in x:
 	end = pc()
 	y_c.append(end - start)
 	print('fibc: ', end-start)
+'''
 
 #plt.plot(x, y_py, label='Python')
 #plt.plot(x, y_numba, label='Numba')
