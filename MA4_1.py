@@ -74,9 +74,17 @@ def sfar_multidim(n = 10000000,d = 11):
 def V_d(d):
     return math.pi**(d/2)/math.gamma((d/2)+1) 
 
-#print(f'Apprximation for n = 1000000 och d = 2: {sfar_multidim(n = 100000,d = 2)} sek') 
-#print(f'Apprximation for n = 1000000 och d = 11: {sfar_multidim(n = 100000,d = 11)} sek') 
-#print(f'Enligt definition:            {V_d(1)} sek') 
+#print('Uppgift 1.2')
+#print(f'Apprximation for n = 1000000 och d = 2: {sfar_multidim(n = 100000,d = 2)} ,Enligt definition: {V_d(2)}') 
+#print(f'Apprximation for n = 1000000 och d = 11: {sfar_multidim(n = 100000,d = 11)} ,Enligt definition: {V_d(11)}') 
+'''
+Uppgift 1.2
+
+Apprximation for n = 1000000 och d = 2: 3.14208 ,Enligt definition: 3.141592653589793
+
+Apprximation for n = 1000000 och d = 11: 2.00704 ,Enligt definition: 1.8841038793898994
+
+'''
 
 # 1.3 Parallel programmering
 
@@ -91,24 +99,45 @@ def parall_sfar_multidim(n = 1000000,d = 11,pros = 10):
         var2 = [d for _ in range(pros)]
         res = ex.map(sfar_multidim, var1,var2) 
 
-        Volume_aprox = sum(res)/pros
-                                             
+        return sum(res)/pros
 
-        print('Parallel programmering ')
-        print(f'Approximerad volym:{Volume_aprox}, Verklig volym:{V_d(d)}')
+'''
+Uppgift 1.3:
 
+Kod fran 1.2, sfar_multidim(10000000, 11):
+
+Tid for berakning:  168.41 sek
+Approximerad volym: 1.885184
+Verklig volym:      1.8841038793898994
+
+Parallel prog, parall_sfar_multidim(1000000, 11, 10):
+
+Tid for berakning : 6.29 sek
+Approximerad volym: 1.9394559999999998 
+Verklig volym:      1.8841038793898994
+
+'''
 
 
 if __name__ == '__main__':
+  
+# notera läggre n här, inte de värdena på n som ska testas i 1.3
 
     start = pc()
-    sfar_multidim(1000000, 11)
+    sfar_multidim(100000, 11)
     end = pc()
-    print('Flera proccesoerer:')
-    print(f'Approximerad volym:, Verklig volym:{V_d(11)}')
-    print(f"tid for berakning: {round(end - start, 2)} sek")
+
+    print('Uppgift 1.3:')
+
+    print('Kod fran 1.2, sfar_multidim(10000000, 11):')
+    print(f'Approximerad volym:{sfar_multidim(100000, 11)}, Verklig volym:{V_d(11)}')
+    print(f"Tid for berakning: {round(end - start, 2)} sek")
 
     start = pc()
-    parall_sfar_multidim(1000000, 11, 10)
+    parall_sfar_multidim(10000, 11, 10)
     end = pc()
-    print(f"Tid for berakning (parallel prog): {round(end - start, 2)} sek")
+
+    print('Parallel prog, parall_sfar_multidim(1000000, 11, 10):')
+    print(f'Approximerad volym:{parall_sfar_multidim(10000, 11,10)}, Verklig volym:{V_d(11)}')
+    print(f"Tid for berakning : {round(end - start, 2)} sek")
+    
