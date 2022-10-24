@@ -92,14 +92,15 @@ from time import perf_counter as pc
 import concurrent.futures as future
 
 def parall_sfar_multidim(n = 1000000,d = 11,pros = 10):
-    
+
+    var1 = [n // pros for _ in range(pros)]
+    var2 = [d for _ in range(pros)] 
+
     with future.ProcessPoolExecutor() as ex:
 
-        var1 = [n // pros for _ in range(pros)]
-        var2 = [d for _ in range(pros)]
         res = ex.map(sfar_multidim, var1,var2) 
 
-        return sum(res)/pros
+    return sum(res)/pros
 
 '''
 Uppgift 1.3:
@@ -110,7 +111,7 @@ Tid for berakning:  168.41 sek
 Approximerad volym: 1.885184
 Verklig volym:      1.8841038793898994
 
-Parallel prog, parall_sfar_multidim(1000000, 11, 10):
+Parallel prog, parall_sfar_multidim(10000000, 11, 10):
 
 Tid for berakning : 6.29 sek
 Approximerad volym: 1.9394559999999998 
